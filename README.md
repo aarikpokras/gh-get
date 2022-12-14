@@ -1,4 +1,7 @@
 # gh-get
+
+(I won't be maintaining this.)
+
 Gets any repository and branch from GitHub.
 
 Syntax: `./gh-get -u [user] -r [repo] -b [branch]`
