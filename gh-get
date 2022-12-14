@@ -1,0 +1,29 @@
+#!/bin/sh
+nogood () {
+printf "\033[1;31mgh-get:\033[1;34m Please enter all of the correct args in the right order. Use the flag \`-h\` for help.\033[0m\n" 
+}
+NOEMP=$1
+if [ -z $NOEMP ]
+then
+printf "\033[1;31mgh-get:\033[1;34m Please enter user, repo and branch. Use -h for help. \033[0m\n"
+# elif [ $NOEMP != '-u' ] | [ $NOEMP != '-h' ]
+# then
+# nogood
+elif [ $NOEMP = '-h' ]
+then
+printf "\033[1;32m\033[41mPlease enter the args in the order shown. If they are not entered correctly, the program may download the wrong file.\033[0m\n[-u] user \n[-r] repo \n[-b] branch\nExample: \033[1;32m./gh-get -u aarikpokras -r spectacleos -b main\033[0m\n"
+elif [ -z $6 ]
+then
+printf "\033[1;31mgh-get:\033[1;34m Please enter all of the correct args in the right order. Use the flag \`-h\` for help.\033[0m\n"
+elif [ -n $2 ]
+then
+GHUSER=$2
+GHREPO=$4
+GHBRAN=$6
+
+curl -L -o $GHREPO-$GHBRAN-gh-got.zip https://github.com/$GHUSER/$GHREPO/archive/refs/heads/$GHBRAN.zip
+printf "\033[1;32m$GHREPO by $GHUSER@$GHBRAN successfully saved to \033[1;31m$HOME/$GHREPO-$GHBRAN-gh-got.zip.\n\033[0m"
+
+else
+	echo no.
+fi
