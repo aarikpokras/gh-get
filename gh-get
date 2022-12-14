@@ -25,5 +25,5 @@ curl -L -o $GHREPO-$GHBRAN-gh-got.zip https://github.com/$GHUSER/$GHREPO/archive
 printf "\033[1;32m$GHREPO by $GHUSER@$GHBRAN successfully saved to \033[1;31m$HOME/$GHREPO-$GHBRAN-gh-got.zip.\n\033[0m"
 
 else
-	echo no.
+	echo Invalid tags.
 fi
